@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F172A"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GameTranslate"
+            android:textColor="#F8FAFC"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:text="Traductor flotante en tiempo real para videojuegos"
+            android:textColor="#94A3B8"
+            android:textSize="14sp" />
+
+        <!-- Idioma de origen -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Idioma del juego (Origen -> Español)"
+            android:textColor="#E2E8F0"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Inglés"
+                android:textColor="#F8FAFC" />
+
+            <RadioButton
+                android:id="@+id/rbJapanese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Japonés"
+                android:textColor="#F8FAFC" />
+
+            <RadioButton
+                android:id="@+id/rbChinese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Chino"
+                android:textColor="#F8FAFC" />
+        </RadioGroup>
+
+        <!-- Modo de captura -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modo de traducción"
+            android:textColor="#E2E8F0"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbZone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Zona redimensionable"
+                android:textColor="#F8FAFC" />
+
+            <RadioButton
+                android:id="@+id/rbFullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Pantalla completa"
+                android:textColor="#F8FAFC" />
+        </RadioGroup>
+
+        <!-- Estilo visual -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tipografía de traducción"
+            android:textColor="#E2E8F0"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgFont"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbFontModern"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Moderna"
+                android:textColor="#F8FAFC" />
+
+            <RadioButton
+                android:id="@+id/rbFontRetro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Retro"
+                android:textColor="#F8FAFC" />
+
+            <RadioButton
+                android:id="@+id/rbFontSerif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Fantasía"
+                android:textColor="#F8FAFC" />
+        </RadioGroup>
+
+        <!-- Escala de letra -->
+        <TextView
+            android:id="@+id/tvFontScaleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tamaño de letra: 100%"
+            android:textColor="#E2E8F0"
+            android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/seekFontScale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:max="100"
+            android:progress="50" />
+
+        <!-- Switches -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swCamouflage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Imitar colores del juego automáticamente"
+            android:textColor="#F8FAFC" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swAutoMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="false"
+            android:text="Modo automático continuo (anti texto fantasma)"
+            android:textColor="#F8FAFC" />
+
+        <Button
+            android:id="@+id/btnStartService"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#6366F1"
+            android:text="Iniciar GameTranslate"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnStopService"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#334155"
+            android:text="Detener servicio"
+            android:textAllCaps="false"
+            android:textColor="#F8FAFC"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Estado: Listo para iniciar"
+            android:textColor="#94A3B8"
+            android:textSize="13sp" />
+    </LinearLayout>
+</ScrollView>
